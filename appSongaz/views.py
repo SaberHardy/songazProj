@@ -11,7 +11,7 @@ from django.views.generic import UpdateView
 
 from appSongaz.forms import FileForm
 from appSongaz.models import File
-from django import forms
+from django.http import HttpResponseRedirect
 
 
 def login(request):
@@ -58,7 +58,7 @@ def all_files(request):
 def delete_file(request, id):
     file_instance = get_object_or_404(File, id=id)
     file_instance.delete()
-    return redirect('all_files')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
 @login_required
@@ -94,7 +94,7 @@ def arrived_files(request):
             file_instance = form.save(commit=False)
             file_instance.user = request.user
             file_instance.save()
-            return redirect('all_files')
+            return redirect('arrived_files')
     else:
         form = FileForm()
 
