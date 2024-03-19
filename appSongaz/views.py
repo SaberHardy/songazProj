@@ -38,20 +38,20 @@ def all_files(request):
     return render(request, 'appsongaz/index.html', context)
 
 
-@login_required
-def upload_file(request):
-    if request.method == 'POST':
-        form = FileForm(request.POST, request.FILES)
-        if form.is_valid():
-            file_instance = form.save(commit=False)
-            file_instance.user = request.user
-            file_instance.save()
-            return redirect('all_files')
-    else:
-        form = FileForm()
-    return render(request, 'appsongaz/upload_file.html', {
-        'form': form
-    })
+# @login_required
+# def upload_file(request):
+#     if request.method == 'POST':
+#         form = FileForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             file_instance = form.save(commit=False)
+#             file_instance.user = request.user
+#             file_instance.save()
+#             return redirect('all_files')
+#     else:
+#         form = FileForm()
+#     return render(request, 'appsongaz/arrived_files.html', {
+#         'form': form
+#     })
 
 
 @login_required
@@ -88,9 +88,19 @@ class UpdateFileView(UpdateView):
 @login_required
 def arrived_files(request):
     files = File.objects.filter(arrived=True)
+    if request.method == 'POST':
+        form = FileForm(request.POST, request.FILES)
+        if form.is_valid():
+            file_instance = form.save(commit=False)
+            file_instance.user = request.user
+            file_instance.save()
+            return redirect('all_files')
+    else:
+        form = FileForm()
 
     context = {
         'all_arrived_files': files,
+        'form': form
     }
     return render(request, 'appsongaz/arrived_files.html', context)
 
@@ -98,7 +108,18 @@ def arrived_files(request):
 @login_required
 def departed_files(request):
     files = File.objects.filter(arrived=False)
+    if request.method == 'POST':
+        form = FileForm(request.POST, request.FILES)
+        if form.is_valid():
+            file_instance = form.save(commit=False)
+            file_instance.user = request.user
+            file_instance.save()
+            return redirect('departed_files')
+    else:
+        form = FileForm()
+
     context = {
         'all_departed_files': files,
+        'form': form
     }
     return render(request, 'appsongaz/departed_files.html', context)

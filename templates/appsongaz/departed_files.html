@@ -5,8 +5,28 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
             <div class="car"></div>
+        <div class="card mb-4">
+                <div class="card-header text-center"><h2>Upload a File</h2></div>
+                <div class="card-body">
+                    <form action="{% url 'departed_files' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-9">
+                                {{ form.file }}
+                                <br>
+                                <h4>The file is Arrived by Default {{ form.arrived }}</h4>
+                            </div>
+                            <div class="col-md-3">
+                                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
             <div class="card mb-4">
-                <div class="card-header text-center"><h2>All Departed Files</h2></div>
+                <div class="card-header text-center">
+                    <h2>All Departed Files</h2>
+                </div>
                 <div class="card-body">
 
                     <div class="example">
