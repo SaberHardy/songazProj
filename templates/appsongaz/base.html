@@ -86,11 +86,11 @@
                 </button>
             </div>
             <div>
-                <ul class="header-nav d-none d-md-flex ms-3">
-                    <li class="nav-item">
-                        <h3><a class="nav-link" href="#">{{ user.username|title }}</a></h3>
-                    </li>
-                </ul>
+                {#                <ul class="header-nav d-none d-md-flex ms-3">#}
+                {#                    <li class="nav-item">#}
+                {#                        <h3 style="margin-left: auto;"><a class="nav-link" href="#">{{ user.username|title }}</a></h3>#}
+                {#                    </li>#}
+                {#                </ul>#}
 
                 <a class="header-brand d-md-none" href="#">
                     <img src="{% static 'appsongaz/gratisography-reindeer-dog-1170x780.jpg' %}">
@@ -112,7 +112,7 @@
                         </div>
                         <a class="dropdown-item" href="{% url 'edit_profile' %}">
                             <i class="bi bi-person-bounding-box text-info mx-3"></i>
-                            Profile
+                            {{ user.username | upper }}
                         </a>
                         <div class="dropdown-divider"></div>
                         {% if user.is_authenticated %}
