@@ -107,16 +107,20 @@ def arrived_files(request):
 
 @login_required
 def departed_files(request):
-    files = File.objects.filter(arrived=False)
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
         if form.is_valid():
             file_instance = form.save(commit=False)
             file_instance.user = request.user
+            file_instance.arrived = False
+
             file_instance.save()
+
             return redirect('departed_files')
     else:
         form = FileForm()
+
+    files = File.objects.filter(arrived=False)
 
     context = {
         'all_departed_files': files,
