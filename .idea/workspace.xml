@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="upload arrived files">
-      <change beforePath="$PROJECT_DIR$/appSongaz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appSongaz/views.py" afterDir="false" />
+    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="departed files instance">
+      <change afterPath="$PROJECT_DIR$/static/appsongaz/img/songaz.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appsongaz/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appsongaz/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +50,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/appsongaz/img" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="sonelgazMahdi" type="Python.DjangoServer" factoryName="Django server">
       <module name="sonelgazMahdi" />
@@ -87,7 +95,7 @@
       <workItem from="1710734627960" duration="18000" />
       <workItem from="1710734736306" duration="411000" />
       <workItem from="1710810478218" duration="2033000" />
-      <workItem from="1710862331234" duration="5697000" />
+      <workItem from="1710862331234" duration="6847000" />
     </task>
     <task id="LOCAL-00001" summary="departed/arrived files">
       <created>1710729844097</created>
@@ -117,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710892670802</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="departed files instance">
+      <created>1710892904662</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1710892904662</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +153,7 @@
     <MESSAGE value="departed/arrived files" />
     <MESSAGE value="departed/arrived html pages" />
     <MESSAGE value="upload arrived files" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload arrived files" />
+    <MESSAGE value="departed files instance" />
+    <option name="LAST_COMMIT_MESSAGE" value="departed files instance" />
   </component>
 </project>
