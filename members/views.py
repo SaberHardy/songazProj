@@ -1,10 +1,11 @@
-from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserChangeForm, PasswordChangeForm
 from django.views import generic
 from django.urls import reverse_lazy
-from members.forms import SignUpForm, EditProfileForm
+from members.forms import SignUpForm, EditProfileForm, PasswordChangingForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
+from django.contrib.auth.views import PasswordChangeView
 
 
 class UserRegisterView(generic.CreateView):
@@ -37,3 +38,8 @@ def login_user(request):
 
     else:
         return render(request, 'authenticate/login.html', {})
+
+
+class PasswordsChangeView(PasswordChangeView):
+    form_class = PasswordChangingForm
+    success_url = reverse_lazy('all_files')
