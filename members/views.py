@@ -2,19 +2,38 @@ from django.contrib.auth.forms import UserChangeForm
 from django.views import generic
 from django.urls import reverse_lazy
 from members.forms import SignUpForm, EditProfileForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
 
 
 class UserRegisterView(generic.CreateView):
     form_class = SignUpForm
-    template_name = 'registration/register.html'
+    template_name = 'authenticate/register.html'
     success_url = reverse_lazy('login')
 
 
 class UpdateProfileView(generic.UpdateView):
     form_class = EditProfileForm
-    template_name = 'registration/edit_profile.html'
+    template_name = 'authenticate/edit_profile.html'
     success_url = reverse_lazy('all_files')
 
     def get_object(self, queryset=None):
         return self.request.user
 
+
+def login_user(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+
+            return redirect('all_files')
+        else:
+            messages.error(request, "Username or password is wrong, Try again please!")
+            return redirect('login')
+
+    else:
+        return render(request, 'authenticate/login.html', {})

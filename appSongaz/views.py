@@ -14,12 +14,8 @@ from appSongaz.models import File
 from django.http import HttpResponseRedirect
 
 
-def login(request):
-    return render(request, 'registration/login.html')
-
-
 def register(request):
-    return render(request, 'registration/register.html')
+    return render(request, 'authenticate/register.html')
 
 
 @login_required

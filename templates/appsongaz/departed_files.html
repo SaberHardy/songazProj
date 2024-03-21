@@ -5,7 +5,7 @@
     <div class="body flex-grow-1 px-3">
         <div class="container-lg">
             <div class="car"></div>
-        <div class="card mb-4">
+            <div class="card mb-4">
                 <div class="card-header text-center"><h2>Upload a File</h2></div>
                 <div class="card-body">
                     <form action="{% url 'departed_files' %}" method="post" enctype="multipart/form-data">
@@ -42,13 +42,13 @@
                                         <th scope="col">Update</th>
                                         <th scope="col">Download</th>
                                         <th scope="col">Delete</th>
-
                                     </tr>
+
                                     </thead>
                                     <tbody>
                                     {% for file in all_departed_files %}
                                         <tr>
-                                            <th scope="row">{{ file.id }}</th>
+                                            <th scope="row">{{ file.unique_id }}</th>
                                             <td>{{ file.filename|truncatechars:15 }}</td>
                                             <td>{{ file.user.username }}</td>
                                             <td>{{ file.file.name|slice:'-4:' }}</td>
