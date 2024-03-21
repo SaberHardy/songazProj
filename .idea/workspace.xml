@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="add migrations">
+    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="fix error messages in login">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSonalgaz/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSonalgaz/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appSongaz/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/appSongaz/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/appSongaz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appSongaz/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/templates/registration/edit_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/authenticate/edit_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/authenticate/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/templates/registration/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/authenticate/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appsongaz/arrived_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appsongaz/arrived_files.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,7 @@
       <workItem from="1710734736306" duration="411000" />
       <workItem from="1710810478218" duration="2033000" />
       <workItem from="1710862331234" duration="7737000" />
-      <workItem from="1710980790332" duration="6411000" />
+      <workItem from="1710980790332" duration="7540000" />
     </task>
     <task id="LOCAL-00001" summary="departed/arrived files">
       <created>1710729844097</created>
@@ -166,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710982143739</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fix error messages in login">
+      <created>1710991684688</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710991684688</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +194,7 @@
     <MESSAGE value="profile name" />
     <MESSAGE value="add unique id to the model" />
     <MESSAGE value="add migrations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add migrations" />
+    <MESSAGE value="fix error messages in login" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix error messages in login" />
   </component>
 </project>
