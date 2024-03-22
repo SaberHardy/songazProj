@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordResetForm, PasswordChangeForm
 from django.contrib.auth.models import User
 from django import forms
+from django.utils.translation import gettext as _
 
 
 class SignUpForm(UserCreationForm):
@@ -61,28 +62,27 @@ class PasswordChangingForm(PasswordChangeForm):
         widget=forms.PasswordInput(
             attrs={'class': 'form-control',
                    'type': 'password',
-                   'placeholder': 'Type Old Password'}))
+                   'placeholder': 'Type Old Password'}),
+    )
 
-    new_password1 = forms.CharField(widget=forms.PasswordInput(
-        attrs={'class': 'form-control',
-               'type': 'password',
-               'placeholder': 'Type New Password'}))
+    new_password1 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={'class': 'form-control',
+                   'type': 'password',
+                   'placeholder': 'Type New Password'})
+    )
 
-    new_password2 = forms.CharField(widget=forms.PasswordInput(
-        attrs={'class': 'form-control',
-               'type': 'password',
-               'placeholder': 'Repeat Password'}))
+    new_password2 = forms.CharField(
+        widget=forms.PasswordInput(
+            attrs={'class': 'form-control',
+                   'type': 'password',
+                   'placeholder': 'Repeat Password'}),
+    )
 
     def __init__(self, *args, **kwargs):
-        super(PasswordChangingForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         for key, field in self.fields.items():
             field.label = ""
-
-        # self.fields['old_password'].widget.attrs['class'] = 'form-control'
-        # self.fields['new_password1'].widget.attrs['class'] = 'form-control'
-        # self.fields['new_password1'].widget.attrs['placeholder'] = 'Your Password'
-        # self.fields['new_password2'].widget.attrs['class'] = 'form-control'
-        # self.fields['new_password2'].widget.attrs['placeholder'] = 'Repeat Password'
 
     class Meta:
         model = User

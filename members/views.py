@@ -42,4 +42,5 @@ def login_user(request):
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
+    template_name = 'registration/change_password.html'
     success_url = reverse_lazy('all_files')

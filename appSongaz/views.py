@@ -18,7 +18,7 @@ def register(request):
     return render(request, 'authenticate/register.html')
 
 
-@login_required
+@login_required(login_url='/members/login/')
 def all_files(request):
     files = File.objects.all()
     all_arrived_files = File.objects.filter(arrived=True)
@@ -50,14 +50,14 @@ def all_files(request):
 #     })
 
 
-@login_required
+@login_required(login_url='/members/login/')
 def delete_file(request, id):
     file_instance = get_object_or_404(File, id=id)
     file_instance.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER', '/'))
 
 
-@login_required
+@login_required(login_url='/members/login/')
 def download_file(request, pk):
     file_instance = get_object_or_404(File, pk=pk)
     file_path = os.path.join(settings.MEDIA_ROOT, str(file_instance.file))
@@ -81,7 +81,7 @@ class UpdateFileView(UpdateView):
         return reverse('all_files')
 
 
-@login_required
+@login_required(login_url='/members/login/')
 def arrived_files(request):
     files = File.objects.filter(arrived=True)
     if request.method == 'POST':
@@ -101,7 +101,7 @@ def arrived_files(request):
     return render(request, 'appsongaz/arrived_files.html', context)
 
 
-@login_required
+@login_required(login_url='/members/login/')
 def departed_files(request):
     if request.method == 'POST':
         form = FileForm(request.POST, request.FILES)
