@@ -56,9 +56,11 @@
                                             <td>{{ file.file.size|filesizeformat }}</td>
                                             <td>{{ file.uploaded_at }}</td>
                                             <td class="text-center">
-                                                <a class="text-center" href="{% url 'update' file.id %}">
-                                                    <i class="bi bi-pencil-square text-info fs-5 text-center"></i>
-                                                </a>
+                                                {% if file.user.id == user.id %}
+                                                    <a class="text-center" href="{% url 'update' file.id %}">
+                                                        <i class="bi bi-pencil-square text-info fs-5 text-center"></i>
+                                                    </a>
+                                                {% endif %}
                                             </td>
 
                                             <td class="text-center">
@@ -68,9 +70,12 @@
                                             </td>
 
                                             <td class="text-center">
-                                                <a href="{% url 'delete' file.id %}">
-                                                    <i class="bi bi-trash text-danger fs-5"></i>
-                                                </a>
+                                                {% if file.user.id == user.id %}
+
+                                                    <a href="{% url 'delete' file.id %}">
+                                                        <i class="bi bi-trash text-danger fs-5"></i>
+                                                    </a>
+                                                {% endif %}
                                             </td>
                                         </tr>
                                     {% endfor %}

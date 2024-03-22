@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="change password">
+    <list default="true" id="5ea27e22-0881-406c-9431-dbf50478a937" name="Changes" comment="change password messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/appSongaz/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/appSongaz/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/templates/registration/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/members/templates/registration/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/members/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/members/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/appsongaz/arrived_files.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/appsongaz/arrived_files.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +97,8 @@
       <workItem from="1710810478218" duration="2033000" />
       <workItem from="1710862331234" duration="7737000" />
       <workItem from="1710980790332" duration="7713000" />
-      <workItem from="1711055873720" duration="7051000" />
+      <workItem from="1711055873720" duration="7480000" />
+      <workItem from="1711145504977" duration="868000" />
     </task>
     <task id="LOCAL-00001" summary="departed/arrived files">
       <created>1710729844097</created>
@@ -186,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711060218801</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="change password messages">
+      <created>1711067348212</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1711067348212</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,6 +220,7 @@
     <MESSAGE value="fix error messages in login" />
     <MESSAGE value="login redirect" />
     <MESSAGE value="change password" />
-    <option name="LAST_COMMIT_MESSAGE" value="change password" />
+    <MESSAGE value="change password messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="change password messages" />
   </component>
 </project>
