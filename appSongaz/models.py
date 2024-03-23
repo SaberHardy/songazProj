@@ -10,7 +10,7 @@ def generate_unique_id():
 
 
 class File(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True)
     file = models.FileField(upload_to='files/')
     uploaded_at = models.DateTimeField(auto_now=True)
     user = models.ForeignKey(User, related_name="files", on_delete=models.CASCADE)
@@ -21,4 +21,9 @@ class File(models.Model):
         return os.path.basename(self.file.name)
 
     def filename(self):
-        return os.path.basename(self.file.name)
+        return os.path.basename(self.file.name)[:10]
+
+    def save(self, *args, **kwargs):
+        if not self.title:
+            self.title = os.path.basename(self.file.name)
+        super().save(*args, **kwargs)
